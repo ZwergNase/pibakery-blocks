@@ -1,6 +1,6 @@
 {
 	"name": "settimezone",
-	"text": "set Timezone %1",
+	"text": "set Timezone to %1",
 	"script": "settimezone.sh",
 	"args": [
 		{
