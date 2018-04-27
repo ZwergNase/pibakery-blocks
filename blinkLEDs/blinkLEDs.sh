@@ -16,5 +16,5 @@ echo gpio > /sys/class/leds/led0/trigger
 echo gpio > /sys/class/leds/led1/trigger
 
 # flash according to block settings
-flash_led $1 0.1 0
-flash_led $2 0.1 0
+flash_led $1 0.2 0
+flash_led $2 0.2 1
