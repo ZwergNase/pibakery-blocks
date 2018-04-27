@@ -1,6 +1,6 @@
 {
 	"name": "setssh",
-	"text": "%1 automatic start of sshd",
+	"text": "%1 ssh daemon at Boot",
 	"script": "setssh.sh",
 	"args": [
 		{
@@ -10,12 +10,12 @@
 	],
 	"network": false,
 	"continue": true,
-	"type": "setting",
-	"category":"setting",
+	"type": "software",
+	"category":"software",
 	"supportedOperatingSystems": [
 		"raspbian-pibakery.img",
 		"raspbian-lite-pibakery.img"
 	],
-	"shortDescription":"Enable or disable automatic of ssh daemon",
+	"shortDescription":"Enable or disable automatic start of ssh daemon",
 	"longDescription":"The ssh daemon (sshd) is used for secure remote access to your Raspberry Pi via the ssh protocol."
 }
