@@ -1,0 +1,27 @@
+{
+	"name": "blinkLEDs",
+	"text": "blink green LED %1 times then blink red LED %2 times",
+	"script": "blinkLEDs.sh",
+	"args": [
+		{
+			"type": "number",
+			"default": "1",
+			"maxLength": 2
+		},
+		{
+			"type": "number",
+			"default": "1",
+			"maxLength": 2
+		}
+	],
+	"network": false,
+	"continue": true,
+	"type": "other",
+	"category":"other",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"shortDescription":"Blink LEDs to indicate progress of PiBackery",
+	"longDescription":"Use this block to indicate the progress of your setup in a headless environment."
+}
