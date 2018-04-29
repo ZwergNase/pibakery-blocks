@@ -1,0 +1,30 @@
+{
+	"name": "dockerinstall",
+	"text": "Install docker\\ninclude Portainer %1\\nPortainer port: %2\\nallow user pi to control docker %3\\n(CAUTION: pi might gain root privileges.\\nMake sure you know what you're doing!)",
+	"script": "dockerinstall.sh",
+	"args": [
+		{
+			"type": "menu",
+			"options": ["Enable", "Disable"]
+		},
+		{
+			"type": "number",
+			"default": "9000",
+			"maxLength":4
+		},
+		{
+			"type": "menu",
+			"options": ["Disable", "Enable"]
+		}
+	],
+	"network": true,
+	"continue": true,
+	"type": "software",
+	"category":"software",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"shortDescription":"Install docker as a daemon and include portainer as gui",
+	"longDescription":"Install docker as a daemon and include portainer as gui to your Raspberry Pi."
+}
