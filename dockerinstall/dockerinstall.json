@@ -1,6 +1,6 @@
 {
 	"name": "dockerinstall",
-	"text": "Install docker\\ninclude Portainer %1\\nPortainer port: %2\\nallow user pi to control docker %3\\n(CAUTION: pi might gain root privileges.\\nMake sure you know what you're doing!)",
+	"text": "Install docker\\ninclude Portainer %1\\nPortainer port: %2\\nallow user %3 to control docker %4\\n(CAUTION: user might gain root privileges.\\nMake sure you know what you're doing!)",
 	"script": "dockerinstall.sh",
 	"args": [
 		{
@@ -11,6 +11,11 @@
 			"type": "number",
 			"default": "9000",
 			"maxLength":4
+		},
+		{
+			"type": "text",
+			"default": "pi",
+			"maxLength":12
 		},
 		{
 			"type": "menu",
