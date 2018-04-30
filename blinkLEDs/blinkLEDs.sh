@@ -1,20 +1,29 @@
 #!/bin/bash
 
-function flash_led {
-	COUNTER=0
-	while [  $COUNTER -lt $1 ]; do
-		echo 1 > /sys/class/leds/led$3/brightness
-		sleep  $2
-		echo 0 > /sys/class/leds/led$3/brightness
-		sleep $2
-		let COUNTER=COUNTER+1 
-	done
-}
-
 # take over control
 echo gpio > /sys/class/leds/led0/trigger
 echo gpio > /sys/class/leds/led1/trigger
 
-# flash according to block settings
-flash_led $1 0.2 0
-flash_led $2 0.2 1
+# red off / green on 
+echo 0 > /sys/class/leds/led0/brightness
+echo 1 > /sys/class/leds/led1/brightness
+
+# flash green
+COUNTER=0
+while [  $COUNTER -lt $1 ]; do
+	echo 0 > /sys/class/leds/led1/brightness
+	sleep  0.2
+	echo 1 > /sys/class/leds/led1/brightness
+	sleep 0.2
+	let COUNTER=COUNTER+1 
+done
+
+# flash red
+COUNTER=0
+while [  $COUNTER -lt $2 ]; do
+	echo 1 > /sys/class/leds/led0/brightness
+	sleep  0.2
+	echo 0 > /sys/class/leds/led0/brightness
+	sleep 0.2
+	let COUNTER=COUNTER+1 
+done
